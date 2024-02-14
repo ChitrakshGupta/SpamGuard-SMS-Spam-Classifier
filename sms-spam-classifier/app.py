@@ -8,6 +8,8 @@ nltk.download('punkt')
 import string
 from nltk.stem.porter import PorterStemmer
 ps=PorterStemmer()
+nltk.data.path.append("nltk_data")
+
 
 
 
