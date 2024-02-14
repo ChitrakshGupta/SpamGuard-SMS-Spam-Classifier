@@ -17,7 +17,7 @@ model=pickle.load(open('model.pkl','rb'))
 
 st.title("Email/Sms Spam Classifier")
 
-input_sms=st.text_area("enter the message")
+input_sms=st.text_area("Enter the message")
 
 
 def transform_text(text):
@@ -42,6 +42,7 @@ def transform_text(text):
     text = y[:]
     y.clear()
     return " ".join(text)
+
 if st.button("Predict"):
     #1. preprocess
     transformed_sms=transform_text(input_sms)
@@ -54,3 +55,10 @@ if st.button("Predict"):
         st.header("Spam")
     else:
         st.header("Not Spam")
+footer = """
+---
+Developed by [Chitraksh](https://www.linkedin.com/in/chitraksh7/)
+"""
+
+# Add footer to the app
+st.markdown(footer, unsafe_allow_html=True)
